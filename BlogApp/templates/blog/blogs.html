@@ -2,5 +2,12 @@
 {% block title %}Blogs{% endblock %}
 {% block content %}
 <h1 class="text-3xl font-bold">Blogs</h1>
-<p>List of blogs will go here.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for category in categories %}
+    <div class="bg-white p-4 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold">{{ category.name }}</h2>
+        <p>{{ category.description }}</p>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
